@@ -9,15 +9,11 @@
   "routes": [
     {
       "src": "/chat",
-      "dest": "server.js"
+      "dest": "/server.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/public/$1"
-    },
-    {
-      "src": "/",
-      "dest": "/index.html"
+      "dest": "/$1"
     }
   ]
 }

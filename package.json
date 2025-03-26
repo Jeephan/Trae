@@ -4,8 +4,10 @@
   "description": "AI Life Coach based on DeepSeek R1 API",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   },
   "dependencies": {
     "axios": "^1.8.4",

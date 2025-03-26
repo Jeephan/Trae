@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                // 跨域凭证
                 credentials: 'include',
                 body: JSON.stringify({ messages })
             });
