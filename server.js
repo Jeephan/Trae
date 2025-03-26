@@ -1,6 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+const dotenv = require('dotenv');
+
+// 加载环境变量
+dotenv.config();
 
 const app = express();
 
@@ -17,9 +21,9 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use(express.static('.'));
 
-// API配置
-const API_KEY = '***REMOVED***';
-const API_URL = '***REMOVED***';
+// API配置 - 从环境变量中读取
+const API_KEY = process.env.API_KEY;
+const API_URL = process.env.API_URL;
 
 app.post('/chat', async (req, res) => {
     try {
@@ -42,7 +46,7 @@ app.post('/chat', async (req, res) => {
     }
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
