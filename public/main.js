@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         messages.push({ role: "user", content: userMessage });
 
         try {
-            const response = await fetch('http://localhost:3000/chat', {
+            // 使用相对路径，而不是硬编码的localhost地址
+            const response = await fetch('/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

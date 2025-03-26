@@ -10,7 +10,10 @@ const app = express();
 
 // 配置CORS选项
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    // 在生产环境中允许来自任何源的请求，或者指定您的Vercel域名
+    origin: process.env.NODE_ENV === 'production' 
+        ? true  // 允许任何源，或者替换为您的Vercel域名
+        : 'http://localhost:3000',
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true
